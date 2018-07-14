@@ -63,5 +63,29 @@ public class Drive extends Subsystem {
     	setLeftSpeed(speed);
     	setRightSpeed(-speed);
     }
+    
+    //getting encoder and gyro values
+    public void resetEncoders() {
+    	leftFront.setSelectedSensorPosition(0, 0, 0);
+    	rightFront.setSelectedSensorPosition(0, 0, 0);
+    }
+    
+    public double getLeftDist() {
+    	return leftFront.getSelectedSensorPosition(0) * RobotMap.DriveMap.DISTANCE_PER_PULSE;
+    }
+    
+    public double getRightDist() {
+    	return rightFront.getSelectedSensorPosition(0) * RobotMap.DriveMap.DISTANCE_PER_PULSE;
+    }
+    
+    public double getLeftSpeed() {
+    	return leftFront.getSelectedSensorVelocity(0) * RobotMap.DriveMap.DISTANCE_PER_PULSE;
+    }
+    
+    public double getRightSpeed() {
+    	return rightFront.getSelectedSensorVelocity(0) * RobotMap.DriveMap.DISTANCE_PER_PULSE;
+    }
+    
+    
 }
 
