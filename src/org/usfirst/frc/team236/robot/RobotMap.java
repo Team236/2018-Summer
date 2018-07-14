@@ -22,6 +22,12 @@ public class RobotMap {
 		public static final int ID_RIGHT_FRONT = 14;
 		public static final int ID_RIGHT_MIDDLE = 3;
 		public static final int ID_RIGHT_REAR = 9;
+		
+		public static final double DIAMETER = 3.96; // wheel diameter in inches
+		public static final double CIRCUMFERENCE = DIAMETER * Math.PI;
+		public static final int PULSE_PER_ROTATION = 512;
+		public static final double DISTANCE_PER_PULSE = CIRCUMFERENCE / PULSE_PER_ROTATION;
+		public static final double WHEEL_TRACK = 25; // inches
 	}
 	
 	public static class JoystickMap {
