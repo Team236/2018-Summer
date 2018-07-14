@@ -11,6 +11,7 @@ import org.usfirst.frc.team236.robot.subsystems.Drive;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends TimedRobot {
 	
@@ -54,11 +55,20 @@ public class Robot extends TimedRobot {
 		//if (m_autonomousCommand != null) {
 		//	m_autonomousCommand.cancel();
 		//}
+		
+		drive.resetEncoders();
+		drive.navx.reset();
 	}
 
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		
+		//put sensor values on smartdashboard
+		SmartDashboard.putNumber("Left Distance", drive.getLeftDist());
+		SmartDashboard.putNumber("Right Distance", drive.getRightDist());
+		
+		SmartDashboard.putNumber("Gyro Angle", drive.navx.getAngle());
 	}
 
 	@Override
