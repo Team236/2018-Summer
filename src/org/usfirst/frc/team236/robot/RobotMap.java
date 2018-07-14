@@ -35,4 +35,22 @@ public class RobotMap {
 		public static final int USB_RIGHT = 1;
 		public static final int USB_CONTROLLER = 2;
 	}
+	
+	public static class ControllerMap {
+		public static final int INTAKE_CUBE = 3;
+		public static final int EJECT_CUBE = 2;
+	}
+	
+	public static class IntakeMap {
+		public static final int DIO_SENSOR = 4;
+		
+		public static final int PWM_LEFT = 0;
+		public static final int PWM_RIGHT = 1;
+		
+		public static final double INTAKE_SPEED = .40;
+		public static final double EJECT_SPEED = -.75;
+		
+		public static final boolean INV_LEFT = true;
+		public static final boolean INV_RIGHT = false;
+	}
 }
