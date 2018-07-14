@@ -7,13 +7,20 @@
 
 package org.usfirst.frc.team236.robot;
 
+import org.usfirst.frc.team236.robot.subsystems.Drive;
+
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class Robot extends TimedRobot {
 	
+	public static OI oi;
+	
+	public static Drive drive = new Drive();
+	
 	@Override
 	public void robotInit() {
+		oi = new OI();
 		
 	}
 
